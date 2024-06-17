@@ -16,6 +16,10 @@ public class Player extends Character implements KeyListener{
 		if(e.getKeyCode()==KeyEvent.VK_RIGHT) {
 			vx=5;
 		}
+		if(e.getKeyCode()==KeyEvent.VK_SPACE) {
+			GameWorld.playerBullets.add(
+					new PlayerBullet(x,y,0,-10));
+		}
 	}
 	public void keylessed(KeyEvent e) {
 		if(e.getKeyCode()==KeyEvent.VK_LEFT) {
@@ -25,14 +29,7 @@ public class Player extends Character implements KeyListener{
 			vx=0;
 		}
 	}
-	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO 自動生成されたメソッド・スタブ
-		
-	}
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO 自動生成されたメソッド・スタブ
 		
 	}
 
