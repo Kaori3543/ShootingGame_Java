@@ -11,9 +11,14 @@ public class GameFrame extends MyFrame{
 		clear();
 		GameWorld.player.draw(this);
 		GameWorld.player.move();
+		
 		movePlayerBullets();
 		for(int i=0; i<GameWorld.enemies.size(); i++) {
 			Enemy e=GameWorld.enemies.get(i);
+			if(Math.abs(e.x-GameWorld.player.x)<=30 &&
+				Math.abs(e.y-GameWorld.player.y)<=30) {
+				System.out.println("やらてた!");
+			}
 			e.draw(this);
 			e.move();
 		}
