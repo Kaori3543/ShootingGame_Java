@@ -5,5 +5,6 @@ public class GameWorld {
 	static Vector<PlayerBullet> playerBullets;
 	static Vector<Enemy> enemies;
 	static boolean enterPressed;
+	static int stage;
 
 }
