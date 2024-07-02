@@ -8,8 +8,8 @@ public class GameFrame extends MyFrame{
 		GameWorld.stage=1;
 		GameWorld.score=0;
 		while(true) {
-			GameWorld.player.x=100;
-			GameWorld.player.y=300;
+		GameWorld.player.x=100;
+		GameWorld.player.y=300;
 		GameWorld.playerBullets=new Vector<PlayerBullet>();
 		GameWorld.enemies=new Vector<Enemy>();
 		GameWorld.enemies.add(new EnemyBase(100,50,GameWorld.stage,0));
@@ -58,6 +58,15 @@ public class GameFrame extends MyFrame{
 			Enemy e=GameWorld.enemies.get(i);
 			e.draw(this);
 			e.move();
+		}
+		int i=0;
+		while(i<GameWorld.enemies.size()) {
+			Enemy e=GameWorld.enemies.get(i);
+			if(e.y>400) {
+				GameWorld.enemies.remove(i);
+			}else {
+				i++;
+			}
 		}
 		// TODO 自動生成されたメソッド・スタブ
 		

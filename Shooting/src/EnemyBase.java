@@ -15,17 +15,17 @@ public class EnemyBase extends Enemy{
 		super.move();
 		if(x>300) vx=GameWorld.stage;
 		if(x<100) vx=GameWorld.stage;
-		if(Math.random()<0.05) {
+		if(Math.random()<0.01) {
 			GameWorld.enemies.add(new StraightEnemy(x,y,0,1+GameWorld.stage));
 		}
 		if(Math.random()<0.05) {
-			GameWorld.enemies.add(new RandomEnemy(x,y,0,GameWorld.stage));
+			GameWorld.enemies.add(new RandomEnemy(x,y,GameWorld.stage,1));
 		}
 		if(Math.random()<0.05) {
 			GameWorld.enemies.add(new DropEnemy(x,y,0,GameWorld.stage));
 		}
 		if(Math.random()<0.05) {
-			GameWorld.enemies.add(new CurveEnemy(x,y,0,GameWorld.stage));
+			GameWorld.enemies.add(new CurveEnemy(x,y,GameWorld.stage,1));
 		}
 	}
 
