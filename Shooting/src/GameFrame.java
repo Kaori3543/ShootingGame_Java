@@ -3,7 +3,7 @@ import java.util.Vector;
 public class GameFrame extends MyFrame {
 	public void run() {
 		GameWorld.player = new Player(100, 300, 0, 0);
-		GameWorld.player.draw(this);
+		
 		addKeyListener(GameWorld.player);
 		GameWorld.stage = 1;
 		GameWorld.score = 0;
@@ -91,7 +91,7 @@ public class GameFrame extends MyFrame {
 					e.life--;
 				}
 				if (e.life <= 0) {
-					GameWorld.score += e.score;
+					GameWorld.score ++;;
 					GameWorld.enemies.remove(j);
 				} else {
 					j++;
@@ -106,11 +106,7 @@ public class GameFrame extends MyFrame {
 	}
 
 	public boolean checkHit(Character a, Character b) {
-		if (Math.abs(a.x - b.x) <= 30 && Math.abs(a.y - b.y) <= 30) {
-			return true;
-		} else {
-			return false;
-		}
+		return Math.abs(a.x-b.x)<=20&&Math.abs(a.y-b.y)<=20;
 	}
 
 	public void mioveEnemies() {
