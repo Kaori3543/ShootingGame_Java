@@ -6,7 +6,7 @@ public class RandomEnemy extends Enemy{
 	}
 	public void move() {
 		super.move();
-		vx=Math.random()*4-2;
+		vx=(Math.random()-0.5) * GameWorld.stage;
 	}
 	public void draw(MyFrame f) {
 		f.setColor(0,128,0);
